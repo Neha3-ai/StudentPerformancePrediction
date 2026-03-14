@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Office Login</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="top-bar"></div>
+<div class="space-8"></div>
+
+<div class="main-container">
+  <div class="login-box">
+    <form action="../controllers/AuthController.php" method="POST">
+        <h2>Login</h2>
+
+        <input type="text" name="e_id" placeholder="Employee ID" required>
+        <input type="password" name="e_secret" placeholder="Secret Code" required>
+
+        <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<div class="space-5"></div>
+<div class="bottom-bar"></div>
+
+</body>
+</html>

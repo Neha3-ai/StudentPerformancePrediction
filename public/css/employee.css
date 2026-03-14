@@ -1,0 +1,418 @@
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e3f2fd;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  height: 60px;
+  background: #0d47a1;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  background: #ce93d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.logout {
+  color: white;
+  text-decoration: none;
+  background: #b71c1c;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.container {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+}
+
+/* ===== SMALL CALENDAR ===== */
+.small-calendar {
+  width: 250px;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #1e3a8a;
+}
+
+.calendar-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* .calendar-grid.small {
+  grid-template-rows: repeat(6, 28px);
+} */
+
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 11px;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.day.present {
+  background: #22c55e;
+  color: white;
+}
+
+.day.absent {
+  background: #ef4444;
+  color: white;
+}
+
+.day.today {
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+.day.future {
+  color: #94a3b8;
+}
+
+.empty {
+  visibility: hidden;
+}
+
+.small-calendar {
+  overflow: hidden;
+}
+
+
+/* ===== BIG CALENDAR ===== */
+.big-calendar {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #1e3a8a;
+}
+
+.big-calendar h3 {
+  margin-top: 0;
+}
+
+.attendance-day {
+  gap: 6px;
+  cursor: pointer;
+}
+
+.attendance-day input {
+  cursor: pointer;
+}
+
+.calendar-grid.big {
+  grid-template-rows: repeat(6, 55px);
+}
+
+.big-calendar .day {
+  background: #f1f5f9;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-calendar .day.today {
+  background: black;
+  color: white;
+  pointer-events: auto;
+}
+
+.big-calendar .present {
+  background: #22c55e;
+  color: white;
+}
+
+.big-calendar .day.disabled {
+  pointer-events: none;
+}
+
+.big-calendar .present {
+  background: #22c55e;
+  color: white;
+}
+
+.weekdays.big {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+
+/* ===== BUTTON ===== */
+.submit-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== TIME BOX ===== */
+.time-box {
+  width: 150px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+/* ================= MINI CALENDAR FIX ================= */
+
+.small-calendar .calendar-grid.small {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 32px);
+  gap: 6px;
+}
+
+.small-calendar .day {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 12px;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mini calendar states */
+.small-calendar .day.today {
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+.small-calendar .day.present {
+  background: #22c55e;
+  color: white;
+}
+
+.small-calendar .day.absent {
+  background: #ef4444;
+  color: white;
+}
+
+.small-calendar .day.future {
+  background: #e5e7eb;
+  color: #9ca3af;
+}
+
+.small-calendar .empty {
+  visibility: hidden;
+}
+
+
+
+
+
+/* ================= MINI CALENDAR – FINAL FIX ================= */
+
+.small-calendar {
+  width: 260px;
+}
+
+.small-calendar .weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.small-calendar .calendar-grid.small {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 34px);
+  gap: 6px;
+}
+
+.small-calendar .day {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #eef2f7;
+  color: #64748b;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* states */
+.small-calendar .day.today {
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+.small-calendar .day.present {
+  background: #22c55e;
+  color: white;
+}
+
+.small-calendar .day.absent {
+  background: #ef4444;
+  color: white;
+}
+
+.small-calendar .day.future {
+  background: #e5e7eb;
+  color: #9ca3af;
+}
+
+.small-calendar .empty {
+  visibility: hidden;
+}
+
+/* worksheet button */
+
+/* ================= WORKSHEET PAGE ================= */
+
+.worksheet-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e3f2fd;
+}
+
+.worksheet-card {
+  background: white;
+  width: 500px;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #1e3a8a;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.worksheet-card h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #0d47a1;
+}
+
+.worksheet-card textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  resize: none;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.worksheet-card textarea:focus {
+  outline: none;
+  border-color: #1e3a8a;
+}
+
+.worksheet-card .submit-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.worksheet-card .submit-btn:hover {
+  background: #08306b;
+}
+
+.submit-btn:disabled {
+    background-color: #b5b5b5;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.success {
+  margin-top: 10px;
+  color: green;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error {
+  margin-top: 10px;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.back-link {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+/* ===== WORD COUNTER ===== */
+#counter {
+  text-align: right;
+  font-size: 12px;
+  color: #475569;
+  margin-top: 5px;
+}
